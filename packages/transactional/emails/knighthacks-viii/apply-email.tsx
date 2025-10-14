@@ -14,18 +14,21 @@ interface AcceptanceEmailProps {
   name: string;
 }
 
-export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
-  const previewText = `Congrats ${name}! Your spot at KnightHacks is secured 🎉`;
+export const KH8ApplyEmail = ({ name }: AcceptanceEmailProps) => {
+  const previewText = `${name}, thank you for applying to KnightHacks! Here's what you need to do:`;
 
   return (
     <Html>
-      <Head />
+      <Head>
+        <meta name="color-scheme" content="light"></meta>
+        <meta name="supported-color-schemes" content="light"></meta>
+      </Head>
       <Tailwind
         config={{
           theme: {
             extend: {
               fontFamily: {
-                manga: ["'Manga Temple'"],
+                sans: ["Arial"],
               },
             },
           },
@@ -46,7 +49,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center">
                     <Img
-                      src="https://i.imgur.com/UvC8nCh.png"
+                      src="https://i.imgur.com/lpTVNl7.png"
                       width={700}
                       height="auto"
                       alt="Divider"
@@ -72,7 +75,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td
                     // @ts-expect-error td is tripping
-                    background="https://i.imgur.com/EtRmspk.png"
+                    background="https://i.imgur.com/XlGEJ11.png"
                     width="700"
                     height="200"
                     align="left"
@@ -82,11 +85,11 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                       backgroundPosition: "center",
                     }}
                   >
-                    <Text
-                      className="font-manga ml-10 text-[28px] font-bold leading-tight text-[#070708]"
-                      style={{ margin: 0, padding: "20px" }}
-                    >
-                      &nbsp;&nbsp;&nbsp; Congrats,&nbsp;
+                    <Text className="mb-6 ml-3 p-[22px] text-[28px] font-bold leading-tight text-[#070708]">
+                      <span className="text-[#4075B7]">
+                        Thanks for applying,
+                      </span>
+                      <br />
                       <span className="text-[32px] font-bold text-[#C04B3D]">
                         {name}!
                       </span>
@@ -98,7 +101,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
 
             <Section className="p-0 text-center">
               <Img
-                src="https://i.imgur.com/6fDiTiv.png"
+                src="https://i.imgur.com/R3VbtS9.png"
                 width={600}
                 alt="KnightHacks Banner"
                 className="mt-[-50px] h-auto w-full"
@@ -142,46 +145,34 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center" style={{ padding: "20px 0" }}>
                     <Text
-                      className="font-manga text-[40px] font-normal leading-[46px] tracking-[0.01em]"
+                      className="text-[40px] font-normal leading-[46px] tracking-[0.01em]"
                       style={{ margin: 0 }}
                     >
-                      1. CONFIRM YOUR{" "}
-                      <span className="font-bold text-[#C04B3D]">SPOT!</span>
+                      1. WATCH YOUR{" "}
+                      <span className="font-bold text-[#C04B3D]">INBOX!</span>
                     </Text>
                   </td>
                 </tr>
                 <tr>
                   <td align="center" style={{ padding: "10px 0" }}>
                     <Text
-                      className="font-manga text-[20px] font-normal leading-[23px] tracking-[0.01em]"
+                      className="text-[20px] font-normal leading-[25px] tracking-[0.01em]"
                       style={{ margin: 0 }}
                     >
-                      (Spots are filling up quickly confirm ASAP!)
+                      Now that your application is on file, there’s nothing left
+                      for you to do. We will be processing applications as we
+                      get closer to the date, so keep an eye on your inbox for
+                      our signal.
+                      <br />
+                      <br />
+                      Bide your time, hone your skills.
+                      <br />
+                      <span className="font-bold text-[#4075B7]">
+                        T.K.
+                      </span> and{" "}
+                      <span className="font-bold text-[#C04B3D]">Lenny</span>{" "}
+                      will need all the help they can get!
                     </Text>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center" style={{ padding: "20px 0" }}>
-                    <Img
-                      src="https://i.imgur.com/h8b8QMm.png"
-                      width={500}
-                      height="auto"
-                      alt="Confirm Spot Graphic"
-                      style={{ maxWidth: "100%", height: "auto" }}
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center" style={{ padding: "10px 0" }}>
-                    <a href={`${process.env.BLADE_URL}/dashboard`}>
-                      <Img
-                        src="https://i.imgur.com/Lxts1BH.png"
-                        width={280}
-                        height="auto"
-                        alt="Confirm Button"
-                        style={{ height: "auto" }}
-                      />
-                    </a>
                   </td>
                 </tr>
               </table>
@@ -198,7 +189,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center" style={{ padding: "20px 0" }}>
                     <Text
-                      className="font-manga text-[40px] font-normal leading-[46px] tracking-[0.01em]"
+                      className="text-[40px] font-normal leading-[46px] tracking-[0.01em]"
                       style={{ margin: 0 }}
                     >
                       2. JOIN OUR{" "}
@@ -209,7 +200,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center" style={{ padding: "10px 0" }}>
                     <Text
-                      className="font-manga text-[20px] font-normal leading-[23px] tracking-[0.01em]"
+                      className="text-[20px] font-normal leading-[23px] tracking-[0.01em]"
                       style={{ margin: 0 }}
                     >
                       (Required by October 23rd)
@@ -229,9 +220,9 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 </tr>
                 <tr>
                   <td align="center" style={{ padding: "10px 0" }}>
-                    <a href={"https://discord.com/invite/Kv5g9vf"}>
+                    <a href={"https://discord.knighthacks.org/"}>
                       <Img
-                        src="https://i.imgur.com/CuX6BqL.png"
+                        src="https://i.imgur.com/msJyhHQ.png"
                         width={280}
                         height="auto"
                         alt="Join Discord Button"
@@ -254,7 +245,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center" style={{ padding: "20px 0" }}>
                     <Text
-                      className="font-manga text-[40px] font-normal leading-[46px] tracking-[0.01em]"
+                      className="text-[40px] font-normal leading-[46px] tracking-[0.01em]"
                       style={{ margin: 0 }}
                     >
                       3. SPREAD THE
@@ -266,24 +257,54 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                   </td>
                 </tr>
                 <tr>
-                  <td align="center" style={{ padding: "20px 0" }}>
+                  <td align="center" style={{ padding: "10px 0" }}>
                     <Img
-                      src="https://i.imgur.com/j67gvlZ.png"
+                      src="https://i.imgur.com/loDXiue.png"
                       width={500}
                       height="auto"
-                      alt="Social Media Graphic"
+                      alt="Poster Graphic"
                       style={{ maxWidth: "100%", height: "auto" }}
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td align="center" style={{ padding: "10px 0" }}>
-                    <a href={`${process.env.BLADE_URL}/dashboard`}>
+                  <td align="center" style={{ padding: "5px 0" }}>
+                    <table
+                      role="presentation"
+                      width="100%"
+                      cellPadding={0}
+                      cellSpacing={0}
+                      border={0}
+                    >
+                      <td align="center">
+                        <Img
+                          src="https://i.imgur.com/bVdMM2G.png"
+                          width={240}
+                          height="auto"
+                          alt="Giveaway 1"
+                          style={{ height: "auto" }}
+                        />
+                      </td>
+                      <td align="center" style={{ padding: "5px 0" }}>
+                        <Img
+                          src="https://i.imgur.com/bLSybss.png"
+                          width={240}
+                          height="auto"
+                          alt="Giveaway 2"
+                          style={{ height: "auto" }}
+                        />
+                      </td>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style={{ padding: "15px 0" }}>
+                    <a href={"https://www.instagram.com/knighthacks/"}>
                       <Img
-                        src="https://i.imgur.com/UFGVeX2.png"
+                        src="https://i.imgur.com/j7SIVO3.png"
                         width={280}
                         height="auto"
-                        alt="Share Button"
+                        alt="Join Instagram Button"
                         style={{ height: "auto" }}
                       />
                     </a>
@@ -336,24 +357,13 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                       border={0}
                     >
                       <tr>
-                        <td align="center" style={{ paddingRight: "10px" }}>
-                          <a href="">
+                        <td align="center">
+                          <a href="https://2025.knighthacks.org/">
                             <Img
                               src="https://i.imgur.com/csimGSU.png"
                               width={240}
                               height="auto"
                               alt="Resource 1"
-                              style={{ height: "auto" }}
-                            />
-                          </a>
-                        </td>
-                        <td align="center">
-                          <a href={`${process.env.BLADE_URL}/guide`}>
-                            <Img
-                              src="https://i.imgur.com/QGmXqoQ.png"
-                              width={240}
-                              height="auto"
-                              alt="Resource 2"
                               style={{ height: "auto" }}
                             />
                           </a>
@@ -365,7 +375,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center" style={{ padding: "10px 0" }}>
                     <Img
-                      src="https://i.imgur.com/4h4rs7S.png"
+                      src="https://i.imgur.com/uAnkxxw.png"
                       width={500}
                       height="auto"
                       alt="Footer Image"
@@ -387,7 +397,7 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
                 <tr>
                   <td align="center">
                     <Img
-                      src="https://i.imgur.com/UvC8nCh.png"
+                      src="https://i.imgur.com/lpTVNl7.png"
                       width={700}
                       height="auto"
                       alt="Divider"
@@ -408,4 +418,4 @@ export const AcceptanceEmail = ({ name }: AcceptanceEmailProps) => {
   );
 };
 
-export default AcceptanceEmail;
+export default KH8ApplyEmail;
