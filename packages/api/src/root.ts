@@ -21,7 +21,6 @@ export const appRouter = createTRPCRouter<{
   member: typeof memberRouter;
   hackathon: typeof hackathonRouter;
   hacker: typeof hackerRouter;
-  judgeSubmissions: typeof judgeSubmissionsRouter;
   event: typeof eventRouter;
   eventFeedback: typeof eventFeedbackRouter;
   user: typeof userRouter;
@@ -31,6 +30,7 @@ export const appRouter = createTRPCRouter<{
   email: typeof emailRouter;
   guild: typeof guildRouter;
   judge: typeof judgeRouter;
+  judgeSubmissions: typeof judgeSubmissionsRouter;
 }>({
   auth: authRouter,
   duesPayment: duesPaymentRouter,
@@ -39,7 +39,6 @@ export const appRouter = createTRPCRouter<{
   hacker: hackerRouter,
   event: eventRouter,
   eventFeedback: eventFeedbackRouter,
-  judgeSubmissions: judgeSubmissionsRouter,
   user: userRouter,
   resume: resumeRouter,
   qr: qrRouter,
@@ -47,6 +46,7 @@ export const appRouter = createTRPCRouter<{
   email: emailRouter,
   guild: guildRouter,
   judge: judgeRouter,
+  judgeSubmissions: judgeSubmissionsRouter,
 });
 
 
